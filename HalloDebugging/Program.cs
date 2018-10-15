@@ -18,10 +18,14 @@ namespace HalloDebugging
             // https://referencesource.microsoft.com/
             // https://docs.microsoft.com/en-us/sysinternals/downloads/
             // https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.defaulttracelistener?view=netframework-4.7.2
+            // https://developer.microsoft.com/de-de/windows/downloads/windows-10-sdk
+            // https://docs.microsoft.com/de-de/visualstudio/debugger/remote-debugging?view=vs-2017
+            // 
+            // ---> Bein installieren: nur DebugTools
 
             Console.WriteLine("Hallo Debugger");
             text = "Main";
-            // MachFehler();
+            //MachFehler();
 
 #if DEBUG
             Console.WriteLine("DEBUG");
