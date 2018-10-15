@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HalloDebugging
 {
     class Program
     {
+        static string text = "Start";
         static void Main(string[] args)
         {
             // Breakpoints mit Condition: Rechtsklick auf Breakpoint
-            // Breakpoint-Fenster: 
+            // Breakpoint-Fenster: Debug/Windows/Breakpoints (Export usw...)
+            // https://referencesource.microsoft.com/
             Console.WriteLine("Hallo Debugger");
+
+            text = "Main";
+            // MachFehler();
 
             HalloWelt();
 
@@ -20,11 +26,18 @@ namespace HalloDebugging
             Console.ReadKey();
         }
 
+        private static void MachFehler()
+        {
+            throw new DivideByZeroException();
+        }
+
         private static void HalloWelt()
         {
-            for (int i = 0; i < 10; i++)
+            text = "HalloWelt";
+            for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine("Hallo Welt");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Hallo Welt {i}");
             }
         }
     }
