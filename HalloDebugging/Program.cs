@@ -20,11 +20,22 @@ namespace HalloDebugging
             text = "Main";
             // MachFehler();
 
+#if DEBUG
+            Console.WriteLine("DEBUG");
+#endif
+#if KÄSE
+            Console.WriteLine("KÄSE");
+#endif
+#if WURST
+            Console.WriteLine("WURST");
+#endif
+
             HalloWelt();
 
             Console.WriteLine("---ENDE---");
             Console.ReadKey();
         }
+
 
         private static void MachFehler()
         {
